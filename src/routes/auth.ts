@@ -11,7 +11,8 @@ router.post('/register', async (req: Request, res: Response) => {
       direccion, correo, ciudad, fecha_nacimiento,
       usuario, contrasena
     } = req.body;
-
+    
+    console.log('Fecha de nacimiento justo antes de la inserción:', fecha_nacimiento); // <--- Agrega esta línea
     // Insertar en usuarios
     const result = await pool.query(
       `INSERT INTO usuarios (nombres, apellidos, documento, telefono, direccion, correo, ciudad, fecha_nacimiento)
